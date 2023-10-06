@@ -1,0 +1,97 @@
+Owen Durkin
+
+1) This code really showed me the capabilities and dangers of C as a language. 
+    I am very impressed with the amount of utility that GDB has as well and I wish I had utiized it earlier.
+    If I tried to call an address that did not have a physical memory correlated to it such as 10000 in Linux
+    then I would get a segmentation fault. While on the SAPC it would work perfectly fine. I have to assume 
+    this is due to the fact the Linux has a limited number of meory allocation options.
+2)
+    a) xyz does have the value 6 when input is md 001023a0 based on syms
+    b) the output for pxyz is a0 23 10 00 00 00 ...... which makes sense as it is 
+        pointing to the xyz address. When you reverse everything because little
+        Endian it is correct.
+    c) so the actual output is a8 1c 10 00 08 04 10 00 ac 1c and the mem_display
+        address based on syms is 00100408 which little endian makes sense and the pointer is 
+        00101ca8. When I md 00101ca8 I get 6d 64 00 as the beginning bytes that
+        correlate to m (6d) and d (64) and also the null character 00. And at
+        the end it has md..Memory Display
+    d) This doesn't do anything as you would have to rerun make tutor and make and 
+        go thorugh that whole process again. I think initially I misread the question
+        and now I see that in the SAPC it just brute forces while on UNIX it 
+        segmentation faults.
+3) 00100100 T _start
+    00100110 T _startupc
+    0010013c T __x86.get_pc_thunk.bx
+    00100140 T main
+    00100226 T getcmd
+    001002a9 T slex
+    0010034d T gettoken
+    001003ec T __x86.get_pc_thunk.ax
+    001003f0 T stop
+    00100408 T mem_display
+    0010050f T mem_set
+    00100561 T help
+    00100661 T breakpoint
+    00100663 T clr_bss
+    00100675 T printf
+    001006b4 T sscanf
+    001006fc t sgetch
+    00100733 t sungetch
+    00100758 T strcmp
+    001007ab T gets
+    00100813 T __x86.get_pc_thunk.di
+    00100817 T init_devio
+    00100838 T init
+    001008b1 T rawputc
+    00100949 t delay
+    00100976 T putc
+    00100aa6 T rawgetc
+    00100b33 T getc
+    00100ba6 T readyc
+    00100c33 T devcontrol
+    00100cc6 T devdescript
+    00100d56 T devname
+    00100dd9 T __x86.get_pc_thunk.cx
+    00100ddd T _doscan
+    0010105a t _innum
+    001012c8 t _instr
+    0010141b t _getccl
+    001014d5 T __x86.get_pc_thunk.si
+    001014d9 T _fdoprnt
+    00101696 t .L27
+    001016b8 t .L24
+    001016de t .L26
+    0010170f t .L23
+    00101767 t .L25
+    00101792 t .L29
+    001017ba t .L21
+    001017e2 t .L28
+    0010180a t .L20
+    00101972 t _prtl10
+    00101a1e t _prtl8
+    00101ab1 t _prtl16
+    00101b42 t _prtX16
+    00101bd3 t _prtl2
+
+
+
+    00102390 d _GLOBAL_OFFSET_TABLE_
+    001023a0 D xyz
+    001023c0 D cmds
+    001023fc D pxyz
+    00102400 D _sctab
+    00102480 D _ctype_
+    00102501 D _edata
+
+4) tutor will only crash on UNIX. I have learned that the SAPC will not segfault 
+    and essentially brute force through failures or crash entirely.
+
+5) So, this didn't work on the SAPC or UNIX tutor, but did work on the
+    teacher's tutor which had the ESP = 003ffec0
+
+6) Honestly the number one thing I got from this projcet was to really read
+    into absolutely every file so you don't miss anything. There were so many times I 
+    got confused and all I had to do was read into the files more. Surprisingly
+    the most difficult thing was surprisingly getting the help function to work.
+    It still causes a segfault in UNIX, but on the SAPC it works and throws a null.
+    I learned more from this project than I think I did in all of the introductory C course.

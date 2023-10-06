@@ -1,0 +1,43 @@
+Script started on Mon 13 Mar 2023 11:43:31 PM EDT
+tuser@tutor-vserver:~$ exitmtip -f count.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+
+
+
+Tutor> <Esc> 
+A
+
+No such command: A, use h command for help
+Tutor> ~downloading count.lnx
+
+........Done.
+
+
+
+Download done, setting EIP to 100100.
+Tutor> gdb
+
+Setting gdb dev to COM1, starting gdb (CTRL-C to abort).
+Enter a string of characters:
+hello
+String: hello
+Enter a character to count:
+l
+The number of l's in the string hello is 2
+Enter a string of characters:
+hello String: hello
+Enter a character to count:
+l
+The number of l's in the string hello is 2
+
+Tutor> ~q 
+Quit handler: 
+killing process 2108 Leaving board #1
+tuser@tutor-vserver:~$ 
+tuser@tutor-vserver:~$ exit
+exit
+
+Script done on Mon 13 Mar 2023 11:46:54 PM EDT

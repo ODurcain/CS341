@@ -1,0 +1,3 @@
+Compilation error: stray '\342' in program
+
+Plugged into GND port on accident intstead of Port 12

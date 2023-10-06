@@ -1,0 +1,48 @@
+Script started on Sat 15 Apr 2023 03:14:08 PM EDT
+tuser@tutor-vserver:~$ odurkin_owen_durkin
+bash: odurkin_owen_durkin: command not found
+tuser@tutor-vserver:~$ odurkin_owen_durkinexit[Kmtip -f echo.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+Please type <CR> to confirm console setting: 
+Setting console dev to COM2Console: colour EGA+ 80x25
+COM1 at 0x03f8 (irq = 4) is a 16550A
+COM2 at 0x02f8 (irq = 3) is a 16550A
+
+                 Welcome to UMB Tutor for the PC
+   UMB Tutor is a 32-bit protected-mode PC debugger/downloader,
+       based on Linux, UMB Tutor for m68k, and remote gdb.
+UMB Tutor is free software and you are welcome to distribute copies
+of it under certain conditions.  There is no warranty for this program.
+The copyright and warranty provisions follow the Gnu general public
+license, available for view in gdb and elsewhere.  Full sources available.
+--bugs, suggestions, questions to eoneil@cs.umb.edu
+
+Exception 3 at EIP=00057a9b: Breakpoint
+Tutor> ~downloading echo.lnx
+
+........Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+Type escape character and enter
+q
+abcException 3 at EIP=00100110: Breakpoint
+Tutor> go 100100
+Type escape character and enter
+q
+abcdexyException 3 at EIP=00100110: Breakpoint
+Tutor> go 100100
+Type escape character and enter
+q
+abcde
+xyException 3 at EIP=00100110: Breakpoint
+Tutor> ~q 
+Quit handler: 
+killing process 2019 Leaving board #1
+tuser@tutor-vserver:~$ exit
+exit
+
+Script done on Sat 15 Apr 2023 03:15:31 PM EDT
